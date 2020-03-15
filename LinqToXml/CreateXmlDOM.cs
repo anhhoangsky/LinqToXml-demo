@@ -15,7 +15,7 @@ namespace LinqToXml
                 new XComment("List Of Student"),
 
                 new XElement("Students",
-                 new XElement("Student",
+                    new XElement("Student",
                             new XAttribute("id", 1005),
                             new XElement("Name", "Nguyễn Hoàng Anh"),
                             new XElement("Gender", "Nam"),
@@ -49,6 +49,11 @@ namespace LinqToXml
             //xmlStudents.Save(Console.Out);
             Console.WriteLine("Done!");
             xmlStudents.Save(path);
+        }
+        static public XElement Parse(string xmlString)
+        {
+            XElement student = XElement.Parse(@xmlString);
+            return student;
         }
     }
 }
