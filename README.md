@@ -1,6 +1,22 @@
 # LinqToXml-demo
 Example
 ------
+***
+- With file.xml:
+```xml
+   <?xml version='1.0'?>
+   <!-- database -->
+   <channel>
+     <item>
+       <title>The Autobiography of Benjamin Franklin</title>
+       <author>
+         <first-name>Benjamin</first-name>
+         <last-name>Franklin</last-name>
+       </author>
+     </item>
+   </channel>
+```
+***
 * Use Linq to Xml:
 ```C#
 var xdoc = XDocument.Load("file.xml");
