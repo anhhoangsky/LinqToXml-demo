@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--List Of Student-->
+<Students>
+  <Student id="1005">
+    <Name>Nguyễn Hoàng Anh</Name>
+    <Gender>Nam</Gender>
+    <Class>K41E</Class>
+  </Student>
+  <Student id="1006">
+    <Name>Huỳnh Ngọc Bảo Phúc</Name>
+    <Gender>Nam</Gender>
+    <Class>K41E</Class>
+  </Student>
+  <Student id="1007">
+    <Name>Võ Trần Nhật Bình</Name>
+    <Gender>Nam</Gender>
+    <Class>K41E</Class>
+  </Student>
+  <Student id="1008">
+    <Name>Nguyễn Văn Diễn</Name>
+    <Gender>Nam</Gender>
+    <Class>K41E</Class>
+  </Student>
+  <Student id="1009">
+    <Name>Nguyễn Minh Tâm</Name>
+    <Gender>Nam</Gender>
+    <Class>K41E</Class>
+  </Student>
+</Students>
