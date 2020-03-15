@@ -15,7 +15,7 @@ var titles = xdoc.XPathSelectElements("rss/channel/item/title")
 ```
 
 | Expression   | Description                                                          |
-|-------------:|---------------------------------------------------------------------:|
+|:------------:|:--------------------------------------------------------------------:|
 | nodename     | Selects all nodes with the name "nodename"                           |
 | /            | Selects from the root node                                           |
 | //           | Selects nodes in the document from the current node that match the   |
