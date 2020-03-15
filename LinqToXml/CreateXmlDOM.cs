@@ -7,10 +7,8 @@ namespace LinqToXml
 {
     class CreateXmlDOM
     {
-        static public void Create()
+        static public void Create(string path)
         {
-            Console.OutputEncoding = Encoding.Unicode;
-            Console.InputEncoding = Encoding.Unicode;
             XDocument xmlStudents = new XDocument(
                 new XDeclaration("1.0", "utf-8", "yes"),
 
@@ -50,7 +48,7 @@ namespace LinqToXml
             );
             //xmlStudents.Save(Console.Out);
             Console.WriteLine("Done!");
-            xmlStudents.Save(@"D:\web\project_team\linqtoxml\linqtoxml\Data.xml");
+            xmlStudents.Save(path);
         }
     }
 }
