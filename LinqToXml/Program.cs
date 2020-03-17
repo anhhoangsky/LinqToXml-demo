@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Linq;
@@ -38,6 +40,7 @@ namespace LinqToXml
                 Console.WriteLine("Student name: {0}", NodeIter.Current.Value);
             };
 
+            Console.WriteLine(nav.SelectSingleNode("Students/Student[@id='1007']/Name").Value);
 
             //XmlDocument doc = LoadXmlDOM.Load(path);
             //Console.WriteLine("******************-------Loaded--------******************");
@@ -60,7 +63,31 @@ namespace LinqToXml
             //Console.ReadLine();
             //Console.WriteLine("Nhap lop: ");
             //Console.ReadLine();
-            
+
+            //XElement person = CreateXmlDOM.Parse(@"<person> <firstname>Nguyễn</firstname><lastname>Anh</lastname>
+            //                                                <firstname>Võ</firstname><lastname>Nhật Bình</lastname>
+            //                                                <firstname>Nguyễn</firstname><lastname>Diễn</lastname>
+            //                                    </person>");
+
+            //IEnumerable<XElement> name = from el in person.Elements("lastname")
+            //                                select el;
+
+            //foreach (string i in name)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //person.Save(Console.Out);
+            Console.WriteLine("Nhap id sinh vien: ");
+            string id = Console.ReadLine();
+            XElement root = XElement.Load(path);
+            IEnumerable<XElement> student = from students in root.Elements("Student")
+                                            where
+                                                 (string)students.Attribute("id") == id
+                                            select students;
+            foreach(XElement st in student)
+            {
+                Console.WriteLine((string)st.Element("Name"));
+            }
         }
     }
 }

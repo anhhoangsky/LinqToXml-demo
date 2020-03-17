@@ -5,8 +5,12 @@ using System.Xml.Linq;
 
 namespace LinqToXml
 {
+
     class CreateXmlDOM
     {
+        /// <summary>
+        /// đối tượng dùng để thêm mới 1 document Xml
+        /// </summary>
         static public void Create(string path)
         {
             XDocument xmlStudents = new XDocument(
@@ -52,7 +56,7 @@ namespace LinqToXml
         }
         static public XElement Parse(string xmlString)
         {
-            XElement student = XElement.Parse(@xmlString);
+            XElement student = XElement.Parse(xmlString);
             return student;
         }
     }
