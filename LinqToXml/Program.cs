@@ -21,7 +21,7 @@ namespace LinqToXml
             XPathNodeIterator NodeIter;
             string strExpression;
 
-            docNav = new XPathDocument(path);
+            docNav = new XPathDocument(path); // read-only
             nav = docNav.CreateNavigator();
             strExpression = "count(/Students/Student)";
             Console.WriteLine("Si so: {0}", nav.Evaluate(strExpression));
@@ -34,6 +34,9 @@ namespace LinqToXml
             strExpression = "/Students/Student/Name";
             NodeIter = nav.Select(strExpression);
             Console.WriteLine("List of students:");
+
+            //nav.SelectSingleNode("Students/Student[@id='1007']/Name").SetValue("Nhật Bình"); throw error
+
             //Iterate through the results showing the element value.
             while (NodeIter.MoveNext())
             {
@@ -41,6 +44,9 @@ namespace LinqToXml
             };
 
             Console.WriteLine(nav.SelectSingleNode("Students/Student[@id='1007']/Name").Value);
+
+            //Edit file Xml
+            AsyncXml.EditXmlDocumentAsync(path);
 
             //XmlDocument doc = LoadXmlDOM.Load(path);
             //Console.WriteLine("******************-------Loaded--------******************");
